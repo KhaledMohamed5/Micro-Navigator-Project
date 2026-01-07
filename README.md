@@ -35,7 +35,8 @@ micronavigator/
 └── performance_evaluator.py  # Multi-scenario testing
 
 
-Installation & Usage
+🚀 Installation & Usage
+
 1. Clone the repository:
 git clone [https://github.com/yourusername/micronavigator.git](https://github.com/yourusername/micronavigator.git)
 cd micronavigator
@@ -43,15 +44,22 @@ cd micronavigator
 pip install numpy matplotlib
 3. Run the simulation: Start the main application entry point.
 
- Algorithm Details1.
+🧠 Algorithm Details
+
 1. Artificial Potential Fields (APF)The robot moves based on the resultant force vector $F_{total} = F_{att} + F_{rep}$.
-   Attractive Force: Pulls the robot towards the goal using the equation $U_{att} = k_{att} \times distance$ with a gain of $k_{att} = 1.5$.
-   Repulsive Force: Pushes the robot away from obstacles using a repulsive gain $k_{rep} = 50.0$ and an influence range of $d_0 = 5.0$.2.
+   Attractive Force: Pulls the robot towards the goal using the equation
+          $U_{att} = k_{att} \times distance$ with a gain of $k_{att} = 1.5$.
+   Repulsive Force: Pushes the robot away from obstacles using a repulsive gain
+         $k_{rep} = 50.0$ and an influence range of $d_0 = 5.0$.2.
+
 2. Waypoint Navigation (Hybrid Approach)
    To escape "Local Minima" (where attractive and repulsive forces cancel out), the Global Planner breaks the path into sub-goals (waypoints). The robot pursues one waypoint at a time until       the final goal is reached.
 
-📈 ResultsThe
-system was tested on 3 complex scenarios with a 100% Success Rate.
-ScenarioPath LengthPlanning TimeStatus1. Narrow Gaps892.45145 ms✅ SUCCESS
-2. U-Shape Trap 645.3298 ms
-✅ SUCCESS3. Staggered Walls723.18112 ms✅ SUCCESS
+📈 📈 Results
+The system was tested on 3 complex scenarios achieving a 100% Success Rate:
+
+Scenario 1 (Narrow Gaps): Successfully navigated through vertical walls with a path length of 892.45 in 145 ms.
+
+Scenario 2 (U-Shape Trap): Effectively escaped the trap (Local Minima) in the fastest time of 98 ms (Path Length: 645.32).
+
+Scenario 3 (Staggered Walls): Handled lateral movement smoothly in 112 ms (Path Length: 723.18).
